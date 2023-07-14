@@ -15,7 +15,7 @@ struct MainTabbarView: View {
                     Image(systemName: "house.fill")
                 }
             
-            Text("Home Feed")
+            SearchView()
                 .tabItem {
                     Image(systemName: "magnifyingglass")
                 }
