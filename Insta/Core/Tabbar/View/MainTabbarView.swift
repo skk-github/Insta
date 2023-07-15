@@ -25,7 +25,7 @@ struct MainTabbarView: View {
                     Image(systemName: "plus.rectangle.fill")
                 }
             
-            Text("Home Feed")
+            LoginView()
                 .tabItem {
                     Image(systemName: "heart.fill")
                 }

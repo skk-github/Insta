@@ -26,7 +26,7 @@ struct FeedView: View {
                         .scaledToFit()
                         .background(Color.white.opacity(0))
                     
-                        .frame( height: 50)
+                        .frame( height: 90)
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Image(systemName: "paperplane")
