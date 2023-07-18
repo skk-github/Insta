@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct SignUpPasswordView: View {
-    
-    @State var password = ""
+     
     @Environment (\.dismiss) var dismiss
+    @EnvironmentObject var regViewModel: RegistrationViewModel
     
     var body: some View {
         VStack{
@@ -24,7 +24,7 @@ struct SignUpPasswordView: View {
             Text("Password should be atleast 8 charecters in length.")
                 .font(.footnote)
                 .padding(.horizontal)
-            SecureField("Password", text: $password)
+            SecureField("Password", text: $regViewModel.password)
                 .modifier(IGCTextModifier())
                 .padding(.vertical)
             NavigationLink {

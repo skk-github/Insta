@@ -11,6 +11,7 @@ struct LoginView: View {
     
     @State var email: String = ""
     @State var password: String = ""
+    @EnvironmentObject var regViewModel: RegistrationViewModel
     
     var body: some View {
         NavigationView {
@@ -80,6 +81,7 @@ struct LoginView: View {
                 Spacer()
                 NavigationLink {
                     SignUpEmailView()
+                        
                         .navigationBarBackButtonHidden()
                 } label: {
                     HStack{

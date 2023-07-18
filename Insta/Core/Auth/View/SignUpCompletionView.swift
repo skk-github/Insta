@@ -10,6 +10,7 @@ import SwiftUI
 struct SignUpCompletionView: View {
     
     @Environment (\.dismiss) var dismiss
+    @EnvironmentObject var regViewModel: RegistrationViewModel
     
     var body: some View {
         VStack{
@@ -25,7 +26,9 @@ struct SignUpCompletionView: View {
                 .padding()
             
             Button {
-                 
+                Task {
+                    try await regViewModel.createUser()
+                }
             } label: {
                 Text("Complete Sign Up")
                     .modifier(IGCButtonModifier())

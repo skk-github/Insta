@@ -96,7 +96,17 @@ struct ProfileView: View {
                     .navigationTitle(Text("Profile"))
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbar(){
-                        Image(systemName: "line.3.horizontal")
+                        ToolbarItem(placement: .navigationBarTrailing) {
+                            Image(systemName: "line.3.horizontal")
+                                .onTapGesture {
+                                    Task{
+                                        try await AuthServices.shared.signOut()
+                                    }
+                                    
+                                }
+                        }
+                        
+                        
                     }
                 }
 //                    .toolbar(c)

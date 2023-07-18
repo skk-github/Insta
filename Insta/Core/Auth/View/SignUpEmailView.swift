@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct SignUpEmailView: View {
-    
-    @State var email: String = ""
+     
     @Environment (\.dismiss) var dismiss
+    @EnvironmentObject var regViewModel: RegistrationViewModel
     
     var body: some View {
         VStack{
@@ -23,7 +23,7 @@ struct SignUpEmailView: View {
             
             Text("This email will be used to sign in")
                 .font(.footnote)
-            TextField("Email", text: $email)
+            TextField("Email", text: $regViewModel.userEmail)
                 .modifier(IGCTextModifier())
                 .padding(.vertical)
             

@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct SignUpUserNameView: View {
-    
-    @State var userName = ""
+     
     @Environment (\.dismiss) var dismiss
+    @EnvironmentObject var regViewModel: RegistrationViewModel
     
     var body: some View {
         VStack{
@@ -24,7 +24,7 @@ struct SignUpUserNameView: View {
             Text("Pick a user name for your account. It can be changed later.")
                 .font(.footnote)
                 .padding(.horizontal)
-            TextField("UserName", text: $userName)
+            TextField("UserName", text: $regViewModel.userName)
                 .autocapitalization(.words)
                 .modifier(IGCTextModifier())
                 .padding(.vertical)
